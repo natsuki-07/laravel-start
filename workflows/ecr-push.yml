@@ -1,0 +1,42 @@
+name: ecr push image
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    # `permissions` を設定しないと OIDC が使えないので注意
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+
+      # AWS 認証
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: "ap-northeast-1"
+          ####### TODO: IAM Roleを設定 #######
+          role-to-assume: "arn:aws:iam::111111110527:role/role-name"
+
+      # ECR ログイン
+      - uses: aws-actions/amazon-ecr-login@v1
+        id: login-ecr # outputs で参照するために id を設定
+
+      # Docker イメージを build・push する
+      - name: build and push docker image to ecr
+        env:
+          # ECR レジストリを `aws-actions/amazon-ecr-login` アクションの `outputs.registry` から取得
+          ####### TODO: REPOSITORYの名前を設定 #######
+          REPOSITORY: "REPOSITORY-NAME"
+          # Git のコミットハッシュにしておく
+          IMAGE_TAG: ${{ github.sha }}
+          ####### TODO: PUSHするリポジトリの設定 #######
+        run: |
+          docker build --platform linux/amd64 -t ${{ env.REPOSITORY }} .
+          docker tag frontend-library-app:${{ env.IMAGE_TAG }} 11111111111.dkr.ecr.ap-northeast-1.amazonaws.com/frontend-library-app:${{ env.IMAGE_TAG }}
+          docker push 11111111111.dkr.ecr.ap-northeast-1.amazonaws.com/frontend-library-app:${{ env.IMAGE_TAG }}
