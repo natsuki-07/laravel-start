@@ -253,3 +253,7 @@
 192.168.65.1 - - [28/May/2024:08:45:50 +0000] "GET /login HTTP/1.1" 200 187 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 192.168.65.1 - - [28/May/2024:08:45:50 +0000] "GET /login HTTP/1.1" 200 187 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 192.168.65.1 - - [28/May/2024:08:45:58 +0000] "GET /admin/register HTTP/1.1" 200 22008 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+192.168.65.1 - - [06/Jun/2024:05:22:02 +0000] "GET / HTTP/1.1" 200 26606 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+192.168.65.1 - - [06/Jun/2024:05:22:02 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "http://localhost/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+192.168.65.1 - - [06/Jun/2024:05:28:06 +0000] "GET / HTTP/1.1" 200 26606 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+192.168.65.1 - - [06/Jun/2024:05:28:21 +0000] "GET / HTTP/1.1" 200 12131 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
